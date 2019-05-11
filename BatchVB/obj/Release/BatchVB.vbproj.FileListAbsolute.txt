@@ -1,0 +1,8 @@
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\bin\Release\BatchVB.dll
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\bin\Release\BatchVB.pdb
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\bin\Release\BatchVB.xml
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\obj\Release\BatchVB.Resources.resources
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\obj\Release\BatchVB.vbproj.GenerateResource.Cache
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\obj\Release\BatchVB.dll
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\obj\Release\BatchVB.xml
+C:\Users\Acer7720\Desktop\BatchVB\BatchVB\obj\Release\BatchVB.pdb
