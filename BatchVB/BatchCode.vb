@@ -1,32 +1,21 @@
-﻿Imports System.IO
+Imports System.IO
 
 Public Class BatchCode
 
-    Public Folder As String
+    Public Sub Execute(FileName As String, Code As String, Optional ShowMsgBox As Boolean = False, Optional Message As String = Nothing)
+        File.WriteAllText(FileName, Code)
 
-    Private Random1 As Integer
-    Private Random2 As Integer
+        Dim Proc As New Process
+        Proc.StartInfo.UseShellExecute = True
+        Proc.StartInfo.FileName = FileName
+        Proc.StartInfo.Verb = "runas"
+        Proc.Start()
+        Proc.WaitForExit()
 
-    Public Sub New(ByVal Folder As String, ByVal Random1 As Integer, ByVal Random2 As Integer)
-        Me.Folder = Folder
-
-        Me.Random1 = Random1
-        Me.Random2 = Random2
-    End Sub
-
-    Public Sub Execute(ByVal Code As String)
-        Dim Path As String = Folder & "\" & New Random().Next(Random1, Random2) & ".bat"
-        Dim Str As New StreamWriter(Path, False)
-
-        Str.Write(Code)
-        Str.Close()
-
-        Dim Proc As New ProcessStartInfo
-        Proc.UseShellExecute = True
-        Proc.FileName = Path
-        Proc.Verb = "runas"
-
-        Process.Start(Proc)
+        If Proc.HasExited Then
+            File.Delete(FileName)
+            If ShowMsgBox Then MsgBox(Message)
+        End If
     End Sub
 
 End Class
